@@ -57,65 +57,10 @@ nav a:hover{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:120px 8%;
+    padding:180px 8% 100px;
     flex-wrap:wrap;
+    gap:40px;
 }
-
-.hero-text{
-    flex:1;
-}
-
-.hero-text h3{
-    color:#cbd5e1;
-}
-
-.hero-text h1{
-    font-size:55px;
-    color:white;
-    margin:15px 0;
-}
-
-.hero-text span{
-    color:#2563eb;
-}
-
-.hero-text p{
-    color:#cbd5e1;
-    line-height:1.8;
-    max-width:600px;
-}
-
-.hero-buttons{
-    margin-top:30px;
-}
-
-.btn{
-    display:inline-block;
-    padding:12px 25px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:600;
-    margin-right:15px;
-}
-
-.btn-primary{
-    background:#2563eb;
-    color:white;
-}
-
-.btn-outline{
-    border:2px solid #2563eb;
-    color:#2563eb;
-}
-
-.hero-image img{
-    width:320px;
-    height:320px;
-    object-fit:cover;
-    border-radius:50%;
-    border:5px solid rgba(255,255,255,0.1);
-}
-
 /* SECTIONS */
 
 section{
