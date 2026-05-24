@@ -1,226 +1,937 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-    font-family:'Poppins',sans-serif;
+/* =========================================================
+   PROFESSIONAL PORTFOLIO WEBSITE CSS
+   Chandrakanth Pedapudi Portfolio
+   Mobile + Tablet + Desktop Responsive
+========================================================= */
+
+
+
+/* =========================================================
+   GOOGLE FONT
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+
+/* =========================================================
+   ROOT COLORS
+========================================================= */
+
+:root{
+
+    --primary-color:#2563eb;
+
+    --dark-color:#0f172a;
+
+    --dark-light:#1e293b;
+
+    --light-color:#f8fafc;
+
+    --white:#ffffff;
+
+    --gray:#64748b;
+
+    --border-color:#e2e8f0;
+
 }
+
+
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    scroll-behavior:smooth;
+
+}
+
+
+
+/* =========================================================
+   BODY
+========================================================= */
 
 body{
-    background:#f8fafc;
-    color:#0f172a;
+
+    font-family:'Poppins', sans-serif;
+
+    background:var(--light-color);
+
+    color:var(--dark-color);
+
+    overflow-x:hidden;
+
 }
 
-/* HEADER */
+
+
+/* =========================================================
+   COMMON SECTION STYLING
+========================================================= */
+
+section{
+
+    padding:100px 8%;
+
+}
+
+
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 header{
-    width:100%;
+
     position:fixed;
+
     top:0;
-    background:#0f172a;
-    padding:20px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+
+    left:0;
+
+    width:100%;
+
+    background:rgba(15,23,42,0.95);
+
+    backdrop-filter:blur(10px);
+
     z-index:1000;
+
+    padding:20px 8%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    transition:0.4s;
+
 }
 
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
 .logo h1{
-    color:white;
+
+    color:var(--white);
+
+    font-size:34px;
+
+    font-weight:700;
+
 }
 
 .logo span{
-    color:#2563eb;
+
+    color:var(--primary-color);
+
 }
 
 .logo p{
+
     color:#cbd5e1;
+
     font-size:14px;
+
+    margin-top:5px;
+
+}
+
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav{
+
+    display:flex;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
 }
 
 nav a{
-    color:white;
+
     text-decoration:none;
+
+    color:var(--white);
+
     margin-left:25px;
+
+    font-size:15px;
+
+    font-weight:500;
+
     transition:0.3s;
+
+    position:relative;
+
+}
+
+
+
+/* Hover Effect */
+
+nav a::after{
+
+    content:'';
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-5px;
+
+    width:0%;
+
+    height:2px;
+
+    background:var(--primary-color);
+
+    transition:0.3s;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
 }
 
 nav a:hover{
-    color:#2563eb;
+
+    color:var(--primary-color);
+
 }
 
-/* HERO */
+
+
+/* Active Nav Link */
+
+nav a.active{
+
+    color:var(--primary-color);
+
+}
+
+
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
 
 .hero{
-    min-height:100vh;
-    background:linear-gradient(to right,#0f172a,#1e293b);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:180px 8% 100px;
-    flex-wrap:wrap;
-    gap:40px;
-}
-/* SECTIONS */
 
-section{
-    padding:100px 8%;
+    min-height:100vh;
+
+    background:linear-gradient(to right,#0f172a,#1e293b);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:50px;
+
+    padding:180px 8% 100px;
+
 }
+
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.hero-text{
+
+    flex:1;
+
+    min-width:300px;
+
+}
+
+.hero-text h3{
+
+    color:#cbd5e1;
+
+    letter-spacing:1px;
+
+    margin-bottom:15px;
+
+}
+
+.hero-text h1{
+
+    font-size:60px;
+
+    line-height:1.2;
+
+    color:var(--white);
+
+    margin-bottom:20px;
+
+}
+
+.hero-text span{
+
+    color:var(--primary-color);
+
+}
+
+.hero-text p{
+
+    color:#cbd5e1;
+
+    line-height:1.9;
+
+    max-width:650px;
+
+    margin-bottom:35px;
+
+}
+
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn{
+
+    display:inline-block;
+
+    padding:14px 28px;
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:0.3s;
+
+}
+
+
+
+/* Primary Button */
+
+.btn-primary{
+
+    background:var(--primary-color);
+
+    color:var(--white);
+
+}
+
+.btn-primary:hover{
+
+    background:#1d4ed8;
+
+}
+
+
+
+/* Outline Button */
+
+.btn-outline{
+
+    border:2px solid var(--primary-color);
+
+    color:var(--primary-color);
+
+}
+
+.btn-outline:hover{
+
+    background:var(--primary-color);
+
+    color:var(--white);
+
+}
+
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.hero-image{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    min-width:300px;
+
+}
+
+.hero-image img{
+
+    width:320px;
+
+    height:320px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:6px solid rgba(255,255,255,0.1);
+
+    box-shadow:0 15px 35px rgba(0,0,0,0.4);
+
+}
+
+
+
+/* =========================================================
+   SECTION TITLES
+========================================================= */
 
 .section-title{
+
     text-align:center;
-    margin-bottom:50px;
+
+    margin-bottom:60px;
+
 }
 
 .section-title h2{
-    font-size:40px;
+
+    font-size:42px;
+
+    color:var(--dark-color);
+
+    margin-bottom:10px;
+
 }
 
-/* ABOUT */
+.section-title p{
+
+    color:var(--gray);
+
+}
+
+
+
+/* =========================================================
+   ABOUT CARD
+========================================================= */
 
 .about-card{
-    background:white;
+
+    background:var(--white);
+
     padding:40px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
-    line-height:1.8;
+
+    border-radius:20px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+
+    line-height:1.9;
+
 }
 
-/* SKILLS */
+
+
+/* =========================================================
+   SKILLS GRID
+========================================================= */
 
 .skills-grid{
+
     display:grid;
+
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+
+    gap:25px;
+
 }
+
+
+
+/* =========================================================
+   SKILL CARD
+========================================================= */
 
 .skill-card{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+    background:var(--white);
+
+    padding:35px;
+
+    border-radius:18px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+
+    transition:0.3s;
+
 }
 
-/* EDUCATION */
+.skill-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.skill-card h3{
+
+    margin-bottom:15px;
+
+    color:var(--primary-color);
+
+}
+
+.skill-card p{
+
+    line-height:1.8;
+
+    color:var(--gray);
+
+}
+
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
 
 .education-container{
+
     display:grid;
-    gap:20px;
+
+    gap:25px;
+
 }
 
 .education-card{
-    background:white;
-    padding:30px;
+
+    background:var(--white);
+
+    padding:35px;
+
+    border-left:5px solid var(--primary-color);
+
     border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+
 }
 
-/* PROJECTS */
+.education-card h3{
+
+    margin-bottom:12px;
+
+}
+
+.education-card p{
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+}
+
+
+
+/* =========================================================
+   RESPONSIBILITY LIST
+========================================================= */
+
+.about-card ul{
+
+    padding-left:20px;
+
+}
+
+.about-card ul li{
+
+    margin-bottom:15px;
+
+    line-height:1.8;
+
+    color:var(--gray);
+
+}
+
+
+
+/* =========================================================
+   PROJECT GRID
+========================================================= */
 
 .project-grid{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
 }
+
+
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
 
 .project-card{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+    background:var(--white);
+
+    padding:35px;
+
+    border-radius:18px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+
+    transition:0.3s;
+
 }
 
-/* CONTACT */
+.project-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.project-card h3{
+
+    margin-bottom:15px;
+
+    color:var(--primary-color);
+
+}
+
+.project-card p{
+
+    color:var(--gray);
+
+    line-height:1.9;
+
+}
+
+
+
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
 
 .contact-container{
-    background:#0f172a;
-    color:white;
+
+    background:linear-gradient(to right,#0f172a,#1e293b);
+
+    color:var(--white);
+
     text-align:center;
-    padding:50px;
-    border-radius:20px;
+
+    padding:60px 40px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+
+}
+
+.contact-container h2{
+
+    font-size:42px;
+
+    margin-bottom:30px;
+
 }
 
 .contact-container p{
-    margin-top:15px;
+
+    font-size:20px;
+
+    margin-bottom:20px;
+
+    line-height:1.8;
+
+    word-break:break-word;
+
 }
 
-/* FOOTER */
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
+
     background:#020617;
+
     color:#94a3b8;
+
     text-align:center;
-    padding:20px;
+
+    padding:25px;
+
+    font-size:15px;
+
 }
 
-/* MOBILE */
 
-@media(max-width:768px){
 
-    header{
-        flex-direction:column;
-        text-align:center;
-        padding:20px;
-    }
+/* =========================================================
+   TABLET RESPONSIVE
+========================================================= */
 
-    nav{
-        margin-top:20px;
-    }
-
-    nav a{
-        display:inline-block;
-        margin:10px;
-        font-size:18px;
-    }
+@media(max-width:1024px){
 
     .hero{
-        padding-top:320px;
-        text-align:center;
-        justify-content:center;
-    }
 
-    .hero-text{
-        width:100%;
+        padding-top:220px;
+
+        text-align:center;
+
+        justify-content:center;
+
     }
 
     .hero-text h1{
-        font-size:38px;
-    }
 
-    .hero-text p{
-        font-size:16px;
+        font-size:50px;
+
     }
 
     .hero-buttons{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-    }
 
-    .btn{
-        margin-bottom:15px;
-        width:220px;
-        text-align:center;
-    }
+        justify-content:center;
 
-    .hero-image img{
-        width:220px;
-        height:220px;
-        margin-top:20px;
-    }
-
-    .skills-grid,
-    .project-grid{
-        grid-template-columns:1fr;
-    }
-
-    .contact-container{
-        padding:30px 20px;
-    }
-
-    .contact-container p{
-        font-size:18px;
-        word-break:break-word;
     }
 
 }
+
+
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media(max-width:768px){
+
+    /* Header */
+
+    header{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:20px;
+
+    }
+
+    nav{
+
+        justify-content:center;
+
+        margin-top:20px;
+
+    }
+
+    nav a{
+
+        margin:10px;
+
+        font-size:16px;
+
+    }
+
+
+
+    /* Hero */
+
+    .hero{
+
+        padding-top:330px;
+
+        text-align:center;
+
+        justify-content:center;
+
+    }
+
+    .hero-text{
+
+        width:100%;
+
+    }
+
+    .hero-text h1{
+
+        font-size:38px;
+
+    }
+
+    .hero-text p{
+
+        font-size:16px;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .btn{
+
+        width:220px;
+
+        text-align:center;
+
+    }
+
+    .hero-image img{
+
+        width:230px;
+
+        height:230px;
+
+        margin-top:30px;
+
+    }
+
+
+
+    /* Sections */
+
+    section{
+
+        padding:80px 6%;
+
+    }
+
+    .section-title h2{
+
+        font-size:34px;
+
+    }
+
+
+
+    /* Cards */
+
+    .about-card,
+
+    .skill-card,
+
+    .education-card,
+
+    .project-card{
+
+        padding:25px;
+
+    }
+
+
+
+    /* Contact */
+
+    .contact-container{
+
+        padding:40px 20px;
+
+    }
+
+    .contact-container h2{
+
+        font-size:34px;
+
+    }
+
+    .contact-container p{
+
+        font-size:18px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   SMALL MOBILE DEVICES
+========================================================= */
+
+@media(max-width:480px){
+
+    .hero{
+
+        padding-top:380px;
+
+    }
+
+    .hero-text h1{
+
+        font-size:32px;
+
+    }
+
+    .hero-text h3{
+
+        font-size:14px;
+
+    }
+
+    nav a{
+
+        font-size:15px;
+
+        margin:8px;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   END OF CSS
+========================================================= */
