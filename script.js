@@ -1,12 +1,11 @@
 // ======================================================
 // PROFESSIONAL PORTFOLIO WEBSITE JAVASCRIPT
-// Chandrakanth Pedapudi Portfolio
 // ======================================================
 
 
 
 // ======================================================
-// LOADING MESSAGE
+// WEBSITE LOADED
 // ======================================================
 
 console.log("Portfolio Website Loaded Successfully");
@@ -14,14 +13,16 @@ console.log("Portfolio Website Loaded Successfully");
 
 
 // ======================================================
-// HEADER BACKGROUND CHANGE ON SCROLL
+// HEADER SCROLL EFFECT
 // ======================================================
 
-window.addEventListener("scroll", function () {
+const header = document.querySelector("header");
 
-    const header = document.querySelector("header");
+window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 50) {
+    // Background Change
+
+    if(window.scrollY > 50){
 
         header.style.background = "#020617";
 
@@ -29,11 +30,31 @@ window.addEventListener("scroll", function () {
 
     }
 
-    else {
+    else{
 
-        header.style.background = "#0f172a";
+        header.style.background = "rgba(15,23,42,0.95)";
 
         header.style.boxShadow = "none";
+
+    }
+
+
+
+    // MOBILE HEADER SHRINK EFFECT
+
+    if(window.innerWidth <= 768){
+
+        if(window.scrollY > 80){
+
+            header.classList.add("shrink-header");
+
+        }
+
+        else{
+
+            header.classList.remove("shrink-header");
+
+        }
 
     }
 
@@ -42,22 +63,22 @@ window.addEventListener("scroll", function () {
 
 
 // ======================================================
-// SMOOTH SCROLLING FOR NAVIGATION LINKS
+// SMOOTH SCROLL
 // ======================================================
 
-const navLinks = document.querySelectorAll('nav a');
+const navLinks = document.querySelectorAll("nav a");
 
 navLinks.forEach(link => {
 
-    link.addEventListener('click', function (e) {
+    link.addEventListener("click", function(e){
 
         e.preventDefault();
 
-        const targetId = this.getAttribute('href');
+        const targetId = this.getAttribute("href");
 
         const targetSection = document.querySelector(targetId);
 
-        if (targetSection) {
+        if(targetSection){
 
             window.scrollTo({
 
@@ -76,7 +97,7 @@ navLinks.forEach(link => {
 
 
 // ======================================================
-// ACTIVE NAVIGATION LINK HIGHLIGHT
+// ACTIVE NAV LINK
 // ======================================================
 
 const sections = document.querySelectorAll("section");
@@ -91,7 +112,7 @@ window.addEventListener("scroll", () => {
 
         const sectionHeight = section.clientHeight;
 
-        if (pageYOffset >= sectionTop - 150) {
+        if(pageYOffset >= sectionTop - 150){
 
             current = section.getAttribute("id");
 
@@ -103,7 +124,7 @@ window.addEventListener("scroll", () => {
 
         link.classList.remove("active");
 
-        if (link.getAttribute("href") === "#" + current) {
+        if(link.getAttribute("href") === "#" + current){
 
             link.classList.add("active");
 
@@ -116,14 +137,16 @@ window.addEventListener("scroll", () => {
 
 
 // ======================================================
-// SIMPLE FADE-IN ANIMATION ON SCROLL
+// FADE-IN ANIMATION
 // ======================================================
 
 const fadeElements = document.querySelectorAll(
+
     ".about-card, .skill-card, .education-card, .project-card, .contact-container"
+
 );
 
-function fadeInOnScroll() {
+function fadeInOnScroll(){
 
     fadeElements.forEach(element => {
 
@@ -131,7 +154,7 @@ function fadeInOnScroll() {
 
         const screenHeight = window.innerHeight;
 
-        if (elementTop < screenHeight - 100) {
+        if(elementTop < screenHeight - 100){
 
             element.style.opacity = "1";
 
@@ -160,7 +183,7 @@ fadeInOnScroll();
 
 
 // ======================================================
-// BUTTON CLICK EFFECT
+// BUTTON HOVER EFFECT
 // ======================================================
 
 const buttons = document.querySelectorAll(".btn");
@@ -170,8 +193,6 @@ buttons.forEach(button => {
     button.addEventListener("mouseenter", () => {
 
         button.style.transform = "scale(1.05)";
-
-        button.style.transition = "0.3s";
 
     });
 
@@ -186,36 +207,14 @@ buttons.forEach(button => {
 
 
 // ======================================================
-// MOBILE NAVIGATION AUTO CLOSE
-// ======================================================
-
-navLinks.forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        const nav = document.querySelector("nav");
-
-        nav.classList.remove("show");
-
-    });
-
-});
-
-
-
-// ======================================================
 // SCROLL TO TOP BUTTON
 // ======================================================
-
-// Create Button
 
 const scrollTopBtn = document.createElement("button");
 
 scrollTopBtn.innerHTML = "↑";
 
 document.body.appendChild(scrollTopBtn);
-
-// Button Styling
 
 scrollTopBtn.style.position = "fixed";
 
@@ -243,17 +242,15 @@ scrollTopBtn.style.zIndex = "1000";
 
 scrollTopBtn.style.boxShadow = "0 4px 10px rgba(0,0,0,0.3)";
 
-// Show Button On Scroll
-
 window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 300) {
+    if(window.scrollY > 300){
 
         scrollTopBtn.style.display = "block";
 
     }
 
-    else {
+    else{
 
         scrollTopBtn.style.display = "none";
 
@@ -261,15 +258,13 @@ window.addEventListener("scroll", () => {
 
 });
 
-// Scroll To Top
-
 scrollTopBtn.addEventListener("click", () => {
 
     window.scrollTo({
 
-        top: 0,
+        top:0,
 
-        behavior: "smooth"
+        behavior:"smooth"
 
     });
 
@@ -281,23 +276,23 @@ scrollTopBtn.addEventListener("click", () => {
 // DEVICE CHECK
 // ======================================================
 
-function detectDevice() {
+function detectDevice(){
 
     const width = window.innerWidth;
 
-    if (width <= 768) {
+    if(width <= 768){
 
         console.log("Mobile Device");
 
     }
 
-    else if (width <= 1024) {
+    else if(width <= 1024){
 
         console.log("Tablet Device");
 
     }
 
-    else {
+    else{
 
         console.log("Desktop Device");
 
@@ -312,7 +307,7 @@ window.addEventListener("resize", detectDevice);
 
 
 // ======================================================
-// PAGE FULLY LOADED
+// PAGE LOADED
 // ======================================================
 
 window.addEventListener("load", () => {
@@ -324,5 +319,5 @@ window.addEventListener("load", () => {
 
 
 // ======================================================
-// END OF SCRIPT
+// END
 // ======================================================
