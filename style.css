@@ -878,13 +878,19 @@ footer{
 
         font-size:34px;
 
-    }
+ .contact-container p{
 
-    .contact-container p{
+    font-size:20px;
 
-        font-size:18px;
+    margin-bottom:20px;
 
-    }
+    line-height:1.8;
+
+    word-wrap:break-word;
+
+    overflow-wrap:break-word;
+
+    word-break:break-word;
 
 }
 
